@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.2.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd" >
+
+	<aop:config proxy-target-class="true" />
+
+
+
+	<context:annotation-config />
+	<!-- para que reconozca los Servicios, DAOs, etc anotados -->
+	<context:component-scan
+		base-package="com.companyname.springapp.web,clasesDAO,clasesDAOHibernetJPA,controller,service" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/taller" />
+		<property name="user" value="root" />
+		<property name="password" value="" />
+		<property name="acquireIncrement" value="2" />
+		<property name="minPoolSize" value="20" />
+		<property name="maxPoolSize" value="50" />
+		<property name="maxIdleTime" value="600" />
+	</bean>
+	<!-- Configuración JPA -->
+	<bean id="emf"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!-- Estos tag hace que /META-INF/persistence.xml ya no sea necesario -->
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="modelo" />
+		<!-- Seteo la implementación del EntityManager (JPA) de Hibernate -->
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="emf" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
