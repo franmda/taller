@@ -1,0 +1,87 @@
+<!--ejecutamos el formulario con ng-submit utilizando la función newUser()
+e incluímos el formulario con la directiva ng-include, en este caso el archivo
+que está en 'formUsuario.html-->
+
+
+<div class="container">
+   <div class="row content">
+        <div class="row page-header text-center">
+			    <h1>Cartelera de la Facultad de Inform&aacute;tica <br/>
+			      <small>Trabajo final</small>
+			    </h1>
+	    </div> 
+<form ng-submit="addUser()" name="myForm">
+      <fieldset>
+    <legend>Agregar Usuario</legend>
+
+      <div class="form-group">
+		    <label for="exampleInputEmail1">Nombre Usuario</label>
+		    <input type="text" ng-model="usrName" class="form-control" name="usrName" placeholder="usrName" required >
+		    <div class="has-error" ng-show="myForm.$dirty">
+		         <span ng-show="myForm.usrName.$error.required">This is a required field</span>
+		         <span ng-show="myForm.usrName.$invalid">This field is invalid </span>
+		    </div>
+	  </div>
+
+
+      <div class="form-group">
+			<label for="exampleInputEmail1">Nombre</label>
+			<input type="text" ng-model="nombre" class="form-control" name="nombre" placeholder="nombre" required>
+			<div class="has-error" ng-show="myForm.$dirty">
+		         <span ng-show="myForm.nombre.$error.required">This is a required field</span>
+		         <span ng-show="myForm.nombre.$invalid">This field is invalid </span>
+		   </div>
+	  </div>
+      
+      
+      <div class="form-group">
+			<label for="exampleInputEmail1">Apellido</label>
+			<input type="text" ng-model="apellido" class="form-control" name="apellido" placeholder="apellido" required >
+			<div class="has-error" ng-show="myForm.$dirty">
+			     <span ng-show="myForm.apellido.$error.required">This is a required field</span>
+			     <span ng-show="myForm.apellido.$invalid">This field is invalid </span>
+			</div>
+	  </div>
+	  
+	  <div class="form-group">
+			<label for="exampleInputEmail1">Password</label>
+			<input type="password" ng-model="pass" class="form-control" name="pass" placeholder="pass" required >
+			<div class="has-error" ng-show="myForm.$dirty">
+			     <span ng-show="myForm.pass.$error.required">This is a required field</span>
+			     <span ng-show="myForm.pass.$invalid">This field is invalid </span>
+			</div>
+	  </div>
+	  
+	  <div class="form-group">
+			<label for="exampleInputEmail1">Mail</label>
+			<input type="text" ng-model="mail" class="form-control" name="mail" placeholder="mail" required >
+			<div class="has-error" ng-show="myForm.$dirty">
+			     <span ng-show="myForm.mail.$error.required">This is a required field</span>
+			     <span ng-show="myForm.mail.$invalid">This field is invalid </span>
+			</div>
+	  </div>
+      
+      
+      <div class="form-group">
+			<label for="exampleInputEmail1" required>Rol usuario</label>
+			<select ng-model="rol_id"
+                    ng-options="rol.nombreRol for rol in roles" 
+                    name="rol"
+                    required>
+                    <option value="">Please select</option>
+           </select>
+           <div class="has-error" ng-show="myForm.$dirty">
+			     <span ng-show="myForm.rol.$error.required">This is a required field</span>
+			     <span ng-show="myForm.rol.$invalid">This field is invalid </span>
+			</div>
+	  </div>
+      
+      
+      
+
+    <button type="submit"  class="button large-12" ng-disabled="myForm.$invalid">Agregar Usuario</button>
+
+
+</form>
+   </div>
+</div>

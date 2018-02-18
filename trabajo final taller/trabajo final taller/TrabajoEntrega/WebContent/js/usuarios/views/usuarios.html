@@ -1,0 +1,37 @@
+<div class="container">
+
+          <div class="panel panel-default">
+                <!-- Default panel contents -->
+              <div class="panel-heading"><span class="lead">List of Users </span></div>
+              <div class="tablecontainer">
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>ID.</th>
+                              <th>usrName</th>
+                              <th>nombre</th>
+                              <th>apellido</th>
+                              <th>tipo usuario</th>
+                              <th width="20%"></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="u in users">
+                              <td><span ng-bind="u.usuario_id"></span></td>
+                              <td><span ng-bind="u.usrName"></span></td>
+                              <td><span ng-bind="u.nombre"></span></td>
+                              <td><span ng-bind="u.apellido"></span></td>
+                              <td><span ng-bind="u.rol_id.nombreRol"></span></td>
+                              <td><span ng-bind="u.mail"></span></td>                   
+                              <td>
+                              <button type="button" ng-show="u.rol_id.nombreRol != 'Administrador'" ng-click="deleteUser(u.usuario_id)" class="btn btn-danger custom-width">Remove</button>
+                              <!--  <a type="button" ng-show="u.rol_id.nombreRol != 'admin'" href="" ui-sref="editUser({usuario: u})" class="btn btn-info">Editar</button> -->
+                              <a class="btn btn-primary" ui-sref="editUser({usuario: u})">  Editar Usuario </a>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <button type="button" class="btn btn-primary" ng-click="crearUsuario()">Agregar Usuario</button>
+              </div>
+          </div>
+      </div>

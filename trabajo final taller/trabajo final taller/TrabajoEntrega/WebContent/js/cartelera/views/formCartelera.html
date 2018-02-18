@@ -1,0 +1,66 @@
+
+
+		<form>
+				<div class="form-group">
+					 <label for="tituloCartelera">Titulo Cartelera</label>
+					 <input type="text" ng-model="cartelera.titulo" class="form-control" name="tituloCartelera" placeholder="Titulo" required ng-minlength="3">
+					 <div class="has-error" ng-show="myForm.$dirty">
+			                       <span ng-show="myForm.tituloCartelera.$error.required">Campo obligatorio</span></br>
+			                       <span ng-show="myForm.tituloCartelera.$error.minlength">Longitud minima de 3 caracteres</span></br>
+			                       <span ng-show="myForm.tituloCartelera.$invalid">Campo invalido </span>
+			         </div>
+				</div>
+				  
+				  
+				<div class="form-group">	           
+		           <label for="tipoCartelera">Tipo Cartelera</label>
+		           <select ng-model="cartelera.tipoCartelera" class="form-control" name="tipoCartelera" required>
+  						<option selected>Educativa</option>
+  						<option >Anuncios</option>
+                        <option >Ofertas</option>    
+                   </select >
+				</div>
+				
+								  
+				<div class="panel panel-default">
+				     <!-- Default panel contents -->
+				     <div class="panel-heading"><span class="lead">Usuarios Permitidos para publicar </span></div>
+				          <div class="tablecontainer">
+				               <table class="table table-hover">
+				                    <thead>
+				                         <tr>
+				                            <th>ID.</th>
+				                            <th>usrName</th>
+				                            <th>nombre</th>
+				                            <th>apellido</th>
+				                            <th>tipo usuario</th>
+				                            <th width="20%"></th>
+				                         </tr>
+				                     </thead>
+				                     <tbody>
+				                         <tr ng-repeat="u in usersPermitidos">
+				                            <td><span ng-bind="u.usuario_id"></span></td>
+				                            <td><span ng-bind="u.usrName"></span></td>
+				                            <td><span ng-bind="u.nombre"></span></td>
+				                            <td><span ng-bind="u.apellido"></span></td>
+				                            <td><span ng-bind="u.rol_id.nombreRol"></span></td>
+				                                 
+					                        <td>
+					                           <button type="button" class="btn btn-default btn-lg" ng-if="usrs.includes(u.usuario_id)" ng-click="removerUsrConPermisos(u.usuario_id)">
+                                                       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remover
+                                               </button>
+					                           <button type="button" ng-if="!(usrs.includes(u.usuario_id))" ng-click="nuevoUsuarioConPermisos(u.usuario_id)" class="btn btn-danger custom-width">agregar usuario</button>
+					                        </td>
+				                         </tr>
+				                      </tbody>
+				                 </table>
+				          </div>
+				  </div>
+				          
+				  <div class="row">
+			           <div class="form-actions floatRight">
+			                <button type="submit"  class="button large-12" ng-disabled="myForm.$invalid">{{ textButton }}</button>
+			                <button type="button" ng-click="reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+			           </div>
+			      </div>
+	   </form>

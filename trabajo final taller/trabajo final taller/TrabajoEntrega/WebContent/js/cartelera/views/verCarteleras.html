@@ -1,0 +1,119 @@
+<!-- Page Content -->
+<div class="container-fluid text-center">
+      <div class="row content">
+	         <div class="row page-header text-center">
+			    <h1>Cartelera de la Facultad de Inform&aacute;tica <br/>
+			      <small>Trabajo final</small>
+			    </h1>
+	         </div>
+	
+	
+			<div class="col-sm-2 sidenav" >
+			      <h2>Carteleras</h2>
+			      <label>Filtrar por tipo</label>
+			      <select ng-model="search.tipoCartelera" class="form-control" name="tipoCartelera" required>
+			           <option ></option>
+  						<option >Educativa</option>
+  						<option >Anuncios</option>
+                        <option >Ofertas</option>    
+                   </select >
+                   
+                   <label>Filtrar por titulo <input ng-model="search.titulo"></label>
+                   
+				  <ul class="nav nav-pills nav-stacked" data-ng-repeat="cartelera in carteleras | filter:search" >
+					    <li ng-class=" {  active: carteleraActiva.Cartelera_id == {{ cartelera.Cartelera_id }}   }"  >
+					         <a href="" ng-click="cargarPublicacion(cartelera)">
+					           {{cartelera.titulo}}
+					          </a>
+					    </li>
+	              </ul>
+	              
+                  
+	              <div ng-if="rolAdmin" >
+	              		<a class="btn btn-default" role="button" ng-click="agregarNuevaCartelera()">Agregar Cartelera</a>
+	              </div>
+	              
+	              <div ng-if="rolAlumno" >
+	              		<a class="btn btn-default" role="button" ng-click="agregarNuevaCartelera()">Carteleras que me interesan</a>
+	              </div>
+	               
+	        </div>
+	
+	
+			<div class="col-sm-8 text-left">
+                 
+                  
+			      <div class="row">
+			         <div class="col-md-6 col-md-offset-3">
+			             <div ng-if="activa">
+                             <div ng-if="puedePublicar && !verUsersInteresados" >
+                             	<a class="btn btn-info"  href="" ng-click="verUsrsInteresados()" >  Ver usuarios interesados </a>
+                             </div>
+                             <div ng-if="verUsersInteresados">
+                                 <a class="btn btn-info"  href="" ng-click="cargarPublicacion(carteleraActiva)" >  Ver Publicaciones </a>
+                             </div>
+                             
+                             <div ng-if="hayInteres && !puedePublicar" class="alert alert-success">
+                                <strong>Cartelera que te interesa!</strong>
+                             </div>
+                             
+                            <div ng-if="!hayInteres && !puedePublicar">
+                                 <a class="btn btn-info"  href="" ng-click="nuevoInteresEnCartelera(carteleraActiva)" >  Registrar Interes </a>
+                             </div>
+                             
+                             <div ng-if="rolAdmin" >
+                             	<a class="btn btn-primary"  href="" ui-sref="editCartelera({cartelera:carteleraActiva})">  EditarCartelera </a>
+				             	<a class="btn btn-danger"  href="" ng-click="eliminarCartelera()">  EliminarCartelera </a>
+				             </div>
+				             
+				         </div>
+                     </div>
+                  </div>
+			      
+			   <div class="container" ng-if="activa && verUsersInteresados" >
+			          <h2>Lista Alumnos interesados</h2>
+					  <table class="table table-bordered">
+					    <thead>
+					      <tr>
+					        <th>UserName</th>
+					        <th>Nombre</th>
+					        <th>Apellido</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr ng-repeat="u in users">
+                              <td><span ng-bind="u.usrName"></span></td>
+                              <td><span ng-bind="u.nombre"></span></td>
+                              <td><span ng-bind="u.apellido"></span></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					  
+			   </div>
+			      
+			    <h2 ng-if="activa && !verUsersInteresados">Publicaciones de la cartelera</h2>
+				<div ng-if="puedePublicar">
+			       <a class="btn btn-default" ng-if="activa"  ui-sref="agregarPublicacion({deCartelera: carteleraActiva})" role="button">Agregar Publicacion</a>
+				</div>
+			      <div ng-repeat="publicacion in publicaciones">
+				        <div>
+				            <div class="thumbnail" ng-show="publicacion.src">
+				              <img ng-src="{{ publicacion.src }}" alt="una imagen">
+				            </div>
+				            <div class="caption">
+				              <h3>{{ publicacion.tituloPublicacion }}</h3>
+				              <p>
+				              <a ui-sref="detail({publicacion: publicacion})" class="btn btn-info" role="button">Ver</a>
+				              <div ng-if="rolAdmin || publicacion.usuario.usuario_id == usuario.usuario_id" >
+				                <a ui-sref="modificarPublicacion({publicacion: publicacion})" class="btn btn-primary" role="button" >Editar</a>
+				                <a ng-click="eliminarPublicacion(publicacion)" class="btn btn-danger" role="button">Eliminar</a>
+				              </div>
+				              </p>
+				            </div>
+				        </div>
+			      </div>
+			    
+	        </div>
+        
+    </div>
+</div>

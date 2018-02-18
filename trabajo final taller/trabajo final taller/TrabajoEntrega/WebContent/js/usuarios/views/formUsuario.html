@@ -1,0 +1,57 @@
+<form>
+  <fieldset>
+    <legend>{{ textButton }}</legend>
+
+      <div class="form-group">
+		    <label for="exampleInputEmail1">Nombre Usuario</label>
+		    <input type="text" ng-model="usuario.usrName" class="form-control" name="userName" placeholder="userName" required >
+		    <div class="has-error" ng-show="myForm.$dirty">
+		         <span ng-show="myForm.userName.$error.required">This is a required field</span>
+		         <span ng-show="myForm.userName.$invalid">This field is invalid </span>
+		    </div>
+	  </div>
+
+
+      <div class="form-group">
+			<label for="exampleInputEmail1">Nombre</label>
+			<input type="text" ng-model="usuario.nombre" class="form-control" name="nombre" placeholder="nombre" required>
+			<div class="has-error" ng-show="myForm.$dirty">
+		         <span ng-show="myForm.nombre.$error.required">This is a required field</span>
+		         <span ng-show="myForm.nombre.$invalid">This field is invalid </span>
+		   </div>
+	  </div>
+	  
+	  <div class="form-group">
+			<label for="exampleInputEmail1">apellido</label>
+			<input type="text" ng-model="usuario.apellido" class="form-control" name="apellido" placeholder="apellido" required>
+			<div class="has-error" ng-show="myForm.$dirty">
+		         <span ng-show="myForm.apellido.$error.required">This is a required field</span>
+		         <span ng-show="myForm.apellido.$invalid">This field is invalid </span>
+		   </div>
+	  </div>
+	  
+	  <div class="form-group">
+			<label for="exampleInputEmail1">Mail</label>
+			<input type="text" ng-model="usuario.mail" class="form-control" name="mail" placeholder="mail" required >
+			<div class="has-error" ng-show="myForm.$dirty">
+			     <span ng-show="myForm.mail.$error.required">This is a required field</span>
+			     <span ng-show="myForm.mail.$invalid">This field is invalid </span>
+			</div>
+	  </div>
+      
+      
+      
+      <div class="form-group" ng-if="!admin">
+			<label for="exampleInputEmail1">Rol usuario</label>
+			<select ng-model="usuario.rol_id"
+			        ng-selected="{{rol.nombreRol == usuario.rol_id.nombreRol}}" 
+                    ng-options="rol.nombreRol for rol in roles">
+           </select>
+	  </div>
+      
+      
+      
+
+    <button type="submit"  class="button large-12" ng-disabled="myForm.$invalid">{{ textButton }}</button>
+  </fieldset>
+</form>

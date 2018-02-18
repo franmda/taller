@@ -1,0 +1,46 @@
+
+<div class="container">
+	<div class="row content">
+		<div class="row page-header text-center">
+			<h1>
+				Cartelera de la Facultad de Inform&aacute;tica <br /> <small>Trabajo
+					final</small>
+			</h1>
+		</div>
+
+		<form ng-submit="crearPublicacion()" name="myForm" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="tituloPublicacion">Titulo Publicacion</label>
+			<input type="text" class="form-control" ng-model="tituloPublicacion" name="tituloPublicacion" placeholder="Titulo" required ng-minlength="3">
+			<div class="has-error" ng-show="myForm.$dirty">
+				<span ng-show="myForm.tituloPublicacion.$error.required">Campo obligatorio</span>
+				<span ng-show="myForm.tituloPublicacion.$error.minlength">Longitud minima de 3 caracteres</span>
+				<span ng-show="myForm.tituloPublicacion.$invalid">Campo invalido</span>
+			</div>
+		</div>
+
+
+		<div class="checkbox">
+			<label> <input type="checkbox" ng-model="activarComentarios"> Comentarios Activado </label>
+		</div>
+
+        <div class="form-group">
+		   <input type="file" name="file" uploader-model="file" />
+	    </div>
+	    
+		<div class="form-group">
+			<textarea class="form-control" rows="3" ng-model="cuerpo" id="comment"></textarea>
+		</div>
+
+
+		<div class="row">
+			<div class="form-actions floatRight">
+				<input type="submit" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+				<button type="button" ng-click="reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+			</div>
+		</div>
+		</form>
+
+	</div>
+
+</div>
