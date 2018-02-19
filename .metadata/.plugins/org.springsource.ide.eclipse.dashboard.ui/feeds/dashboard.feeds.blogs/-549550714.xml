@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-02-14T18:23:00Z</updated>
+  <updated>2018-02-19T12:25:08Z</updated>
+  <entry>
+    <title>Spring Framework 5.0.4 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/02/19/spring-framework-5-0-4-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2018-02-19:3172</id>
+    <updated>2018-02-19T12:25:08Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, I am pleased to announce that Spring Framework 5.0.4 &lt;a href="http://projects.spring.io/spring-framework"&gt;is available now&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This maintenance release is the base for the upcoming second release candidate of Spring Boot 2 and &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10000&amp;version=16629"&gt;includes 59 fixes and selected improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/SPR"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.0.4.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Task 2.0.0.M3 is now available</title>
     <link rel="alternate" href="https://spring.io/blog/2018/02/14/spring-cloud-task-2-0-0-m3-is-now-available" />
@@ -1846,79 +1859,5 @@ StepVerifier.create(cached)&#xD;
 &lt;p&gt;A recommended update that fixes a race condition when publishing the stream body from a different thread than one of Netty&amp;rsquo;s own threads. We now also support &lt;code&gt;KQueue&lt;/code&gt; as an alternative to &lt;code&gt;Epoll&lt;/code&gt;. Also &lt;code&gt;HttpClient&lt;/code&gt; has been updated to emit an error on premature HTTP response completion.&lt;/p&gt;
 &lt;p&gt;We are now working on the &lt;code&gt;0.7.4.RELEASE&lt;/code&gt; and the following &lt;code&gt;0.8.0&lt;/code&gt;. Keep in mind the next major version will bring important API changes and for that reason we strongly recommend to use an adapting layer instead of exposing the &lt;code&gt;reactor-netty&lt;/code&gt; API directly. Or simply use &lt;code&gt;Spring Framework&lt;/code&gt; which does exactly that on both the client and server sides.&lt;/p&gt;&lt;h1&gt;&lt;a href="#extra-stuff" class="anchor" name="extra-stuff"&gt;&lt;/a&gt;Extra Stuff&lt;/h1&gt;
 &lt;p&gt;Last month, we had a chance to speak at SpringOne Platform. You can view &lt;a href="https://speakerdeck.com/smaldini/springoneplatform-2017-reactor-now-and-tomorrow"&gt;the slides online&lt;/a&gt; and watch &lt;a href="https://www.youtube.com/watch?v=zls8ZLry68M"&gt;the video replay&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Next Generation OAuth 2.0 Support with Spring Security</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/01/30/next-generation-oauth-2-0-support-with-spring-security" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Joe Grandja</name>
-    </author>
-    <id>tag:spring.io,2018-01-29:3149</id>
-    <updated>2018-01-30T13:35:50Z</updated>
-    <content type="html">&lt;div class="sect1"&gt;
-&lt;h2 id="current-state"&gt;&lt;a class="anchor" href="#current-state"&gt;&lt;/a&gt;Current State&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The current state of OAuth 2.0 Support, within the Spring projects portfolio, is spread out between
-&lt;a href="http://projects.spring.io/spring-security-oauth/" target="_blank"&gt;Spring Security OAuth&lt;/a&gt;,
-&lt;a href="https://cloud.spring.io/spring-cloud-security/" target="_blank"&gt;Spring Cloud Security&lt;/a&gt;,
-&lt;a href="https://projects.spring.io/spring-boot/" target="_blank"&gt;Spring Boot 1.5.x&lt;/a&gt;, and the new support introduced in
-&lt;a href="https://projects.spring.io/spring-security/" target="_blank"&gt;Spring Security 5&lt;/a&gt;.
-As a user of OAuth, you may be asking, "Which project(s) do I use? And why has Spring Security 5 introduced new support into the mix?"&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To put it simply, there was a need to unify the OAuth 2.0 support into one project
-in order to provide a clear choice to the user and to avoid any potential confusion.
-In addition, the OAuth 2.0 support needed to take the next level and provide more extensive support for OAuth 2.0 and OpenID Connect 1.0.
-Also, based on community feedback, documentation needed to be re-vamped in order to allow for ease of use and promote developer productivity.
-Based on all these factors, we decided to start afresh and build the next generation of OAuth 2.0 support in Spring Security 5.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="the-plan-forward"&gt;&lt;a class="anchor" href="#the-plan-forward"&gt;&lt;/a&gt;The Plan Forward&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The OAuth 2.0 support is currently underway in Spring Security 5 with new &lt;em&gt;Client&lt;/em&gt; support.
-The plan is to also provide support for &lt;em&gt;Resource Server&lt;/em&gt; by mid-2018 and &lt;em&gt;Authorization Server&lt;/em&gt; by the end of 2018 or early 2019.
-Our goal is to provide extensive support for &lt;a href="https://oauth.net/2/" target="_blank"&gt;OAuth 2.0 Core and Extensions&lt;/a&gt;,
-&lt;a href="http://openid.net/connect/" target="_blank"&gt;OpenID Connect 1.0&lt;/a&gt;, and &lt;a href="http://jose.readthedocs.io/en/latest/" target="_blank"&gt;Javascript Object Signing and Encryption (JOSE)&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you are interested in finding out more about which OAuth 2.0 and OpenID Connect 1.0 features will be implemented in Spring Security 5,
-you may track upcoming features in the &lt;a href="https://github.com/spring-projects/spring-security/issues" target="_blank"&gt;Spring Security GitHub&lt;/a&gt; repo using the
-&lt;a href="https://github.com/spring-projects/spring-security/labels/OAuth2" target="_blank"&gt;OAuth2&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-security/labels/OIDC" target="_blank"&gt;OIDC&lt;/a&gt;, and
-&lt;a href="https://github.com/spring-projects/spring-security/labels/JWT-JOSE" target="_blank"&gt;JWT-JOSE&lt;/a&gt; labels.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="future-of-legacy-spring-security-oauth-project"&gt;&lt;a class="anchor" href="#future-of-legacy-spring-security-oauth-project"&gt;&lt;/a&gt;Future of Legacy Spring Security OAuth Project&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;At this time, we would also like to announce that the &lt;a href="http://projects.spring.io/spring-security-oauth/" target="_blank"&gt;Spring Security OAuth&lt;/a&gt; project
-is officially in maintenance mode. We will provide bug/security fixes and consider adding minor features but we will not be adding major features.
-Our focus and efforts going forward will be put into building all the features currently in Spring Security OAuth into Spring Security 5.x.
-After Spring Security has reached feature parity with Spring Security OAuth, we will continue to support bugs and security fixes for at least one year.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feature-matrix-roadmap"&gt;&lt;a class="anchor" href="#feature-matrix-roadmap"&gt;&lt;/a&gt;Feature Matrix / Roadmap&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We&amp;#8217;ve put together a &lt;a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Features-Matrix" target="_blank"&gt;feature matrix&lt;/a&gt;
-that outlines all the OAuth 2.0 features implemented by the various projects within the Spring portfolio.
-This matrix may be used to determine which project(s) to use (today) based on your OAuth 2.0 requirements.
-It also serves as a roadmap of the features to be implemented as we move towards feature parity with Spring Security OAuth.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For any additional inquiries you may have, please see the
-&lt;a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Features-Matrix#frequently-asked-questions" target="_blank"&gt;Frequently Asked Questions&lt;/a&gt; on our wiki
-or reach out to me &lt;a href="https://twitter.com/joe_grandja"&gt;@joe_grandja&lt;/a&gt; or Rob &lt;a href="https://twitter.com/rob_winch"&gt;@rob_winch&lt;/a&gt; on Twitter.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

@@ -12,7 +12,6 @@ import modelo.Usuario;
 public class UserService {
 	
 	@Autowired
-	static
 	UsuarioDAO usuarioDAO;
 	
 	public Usuario guardarUsuario (Usuario anUser) {
@@ -23,7 +22,7 @@ public class UserService {
 		return usuarioDAO.recuperar(id);
 	}
 	
-	public static Usuario getUserByNombre(String username) {
+	public Usuario getUserByNombre(String username) {
 		return usuarioDAO.recuperarByUSername(username);
 	}
 }

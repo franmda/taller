@@ -11,6 +11,13 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
 <context:component-scan base-package="controller"/>
+<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+  <property name="viewClass"
+   value="org.springframework.web.servlet.view.JstlView"></property>
+  <property name="prefix" value="/WEB-INF/jsp/"></property>
+  <property name="suffix" value=".jsp"></property>
+ </bean>
+
 <mvc:annotation-driven/>
 <!-- Definiciones de otros beans relacionados con el frontend-->
 </beans>
