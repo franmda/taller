@@ -6,6 +6,17 @@
 <title>Hello Spring MVC</title>
 </head>
 <body>
+<form method="POST" action="http://localhost:8080/springapp/usuarios">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
 hola soy llamado desde un controller
 </body>
 </html>
