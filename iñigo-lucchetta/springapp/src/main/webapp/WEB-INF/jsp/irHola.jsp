@@ -4,14 +4,24 @@
 <html>
 <head>
 <title>Hello Spring MVC</title>
+<script type="text/javascript" src="javascript.js">
+
+function myFunction(){
+	alert("hola");
+	return 0;
+}
+
+    
+
+</script>
 </head>
 <body>
-<form method="POST" action="http://localhost:8080/springapp/usuarios">
+<form name="formulario" method="POST" onsubmit="return myFunction()" action="http://localhost:8080/springapp/">
   First name:<br>
-  <input type="text" name="firstname" value="Mickey">
+  <input type="text" id="name" name="firstname" value="">
   <br>
   Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
+  <input type="text" id="last" name="lastname" value="">
   <br><br>
   <input type="submit" value="Submit">
 </form> 
