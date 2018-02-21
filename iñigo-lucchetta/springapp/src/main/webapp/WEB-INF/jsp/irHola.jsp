@@ -4,26 +4,46 @@
 <html>
 <head>
 <title>Hello Spring MVC</title>
-<script type="text/javascript" src="javascript.js">
+
+<script >
 
 function myFunction(){
-	alert("hola");
-	return 0;
+	var name = document.getElementById("name").value;
+	var password = document.getElementById("pass")
+	alert("hasta aca anda");
+	
+	
 }
 
+$(function() {
+    $('#btnCallService').click(function() {
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/springapp/autenticacion',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function(response) {
+                $('#lblData').html(JSON.stringify(response));
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
     
 
 </script>
 </head>
 <body>
 <form name="formulario" method="POST" onsubmit="return myFunction()" action="http://localhost:8080/springapp/">
-  First name:<br>
+  User name:<br>
   <input type="text" id="name" name="firstname" value="">
   <br>
-  Last name:<br>
-  <input type="text" id="last" name="lastname" value="">
+  Password:<br>
+  <input type="text" id="pass" name="lastname" value="">
   <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" id="btnCallService" value="Submit">
 </form> 
 
 
