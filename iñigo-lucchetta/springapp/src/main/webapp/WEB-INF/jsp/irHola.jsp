@@ -4,49 +4,44 @@
 <html>
 <head>
 <title>Hello Spring MVC</title>
-
-<script >
-
-function myFunction(){
-	var name = document.getElementById("name").value;
-	var password = document.getElementById("pass")
-	alert("hasta aca anda");
-	
-	
-}
-
-$(function() {
-    $('#btnCallService').click(function() {
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:8080/springapp/autenticacion',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            success: function(response) {
-                $('#lblData').html(JSON.stringify(response));
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    });
-});
-    
-
-</script>
 </head>
 <body>
-<form name="formulario" method="POST" onsubmit="return myFunction()" action="http://localhost:8080/springapp/">
-  User name:<br>
-  <input type="text" id="name" name="firstname" value="">
+
+<form  id="myForm" name="formulario" >
+  First name:
   <br>
-  Password:<br>
-  <input type="text" id="pass" name="lastname" value="">
+  <input type="text" id="firstname" name="firstname" >
+  <br>
+  Last name:
+  <br>
+  <input type="text" id="lastname" name="lastname" >
   <br><br>
-  <input type="submit" id="btnCallService" value="Submit">
+  <input type="submit" value="submit">
 </form> 
 
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+       crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  document.getElementById('myForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var firstName = document.getElementsByName('firstname')[0].value;
+      var lastName = document.getElementsByName('lastname')[0].value;
+      
+      $.ajax({
+          type: 'POST',
+          url: 'http://localhost:8080/springapp/usuarios',
+          data: {
+            nombre:"fran"
+            
+            },
+            success: function (respone) {
+              // en response vuelve la respues de la API.
+              console.log(response);
+            },
+            dataType:'JSON'
+          });
+        });
+      </script>
+    </body>
 
-hola soy llamado desde un controller
-</body>
-</html>
+    </html>
