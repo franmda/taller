@@ -1705,3 +1705,22 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/springapp/pom.
 2018-02-25 22:44:01,058 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-02-25 22:44:01,058 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-25 22:44:01,058 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Playa Norte\Desktop\Fran\workspace2\git\taller\iñigo-lucchetta\springapp\src\test\resources
+2018-02-27 11:28:01,887 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-02-27 11:28:27,928 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2018-02-27 11:33:36,737 [Worker-22] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.companyname:springapp:0.0.1-SNAPSHOT @ C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\pom.xml.
+2018-02-27 11:33:50,957 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:33:50,964 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\main\resources
+2018-02-27 11:33:50,982 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:33:50,994 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\test\resources
+2018-02-27 11:35:11,301 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:35:11,316 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\main\resources
+2018-02-27 11:35:11,323 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:35:11,327 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\test\resources
+2018-02-27 11:42:20,017 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:42:20,032 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\main\resources
+2018-02-27 11:42:20,040 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:42:20,044 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\test\resources
+2018-02-27 11:47:00,000 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:47:00,010 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\main\resources
+2018-02-27 11:47:00,016 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-27 11:47:00,021 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Renata\Desktop\work\taller\iñigo-lucchetta\springapp\src\test\resources
